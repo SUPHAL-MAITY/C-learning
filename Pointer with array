@@ -1,0 +1,35 @@
+#include <iostream>
+#include <string>
+#include <sstream>
+using namespace std;
+
+
+
+int main(){
+  int array[4]= {1,4,2,6};
+  cout << array[0]<<endl;///accessing the first element  of array
+
+
+  int arr[5];
+  arr[2]=10; ////setting the second element of array to 10
+  
+  cout << arr[2];
+  int *ap= arr;///This declares a pointer variable ap and assigns it the address of the first element of the array arr.
+  *ap=20;//// This assigns the value 20 to the memory location pointed to by ap
+ int *app=arr;////This declares a pointer variable app and assigns it the address of the first element of the array arr.
+  app++;////// This increments the pointer app to point to the next element of the array.
+  *app=30;///// This assigns the value 30 to the memory location pointed to by app
+  cout<<arr[1];
+  
+  
+
+
+int arr[5];
+  arr[2]=10;
+  *arr=20;///Assign 20 to the first element of the array
+  cout << arr[0];
+ 
+  return 0;
+  
+  
+}
