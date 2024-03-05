@@ -1,0 +1,40 @@
+
+
+#include <iostream>
+#include <string>
+#include <sstream>
+using namespace std;
+
+
+
+int main(){
+  int life;
+  life=40;
+
+  int card;
+  card=4;
+
+  int my_card=card;
+
+  int *pointer_card,*pointer_life; //initialize the pointer
+  pointer_card = &card;/// set to the address of the card
+  pointer_life= &life;
+
+
+  //////deref the pointer
+  
+  my_card = *pointer_card;  ///my_card accessing to  the vaue  which this address holds
+  int my_life=*pointer_life;
+
+  printf("The value of life is %d\n",life);/////The value of life is 40
+  printf("The value of card is %d\n",card);/////The value of card is 4
+  printf("The value of pointer_cardis %p\n",pointer_card);/////The value of pointer_cardis 0x7fff6c9bb8a8
+  printf("The value of pointer_life is %p\n",pointer_life);/////The value of pointer_life is 0x7fff6c9bb8ac
+  printf("The value of my_card is %d\n",my_card);/////The value of my_card is 4
+  printf("The value of my_life is %d\n",my_life);////The value of my_life is 40
+  
+ 
+  return 0;
+  
+  
+}
