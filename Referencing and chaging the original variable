@@ -1,0 +1,18 @@
+#include <iostream>
+
+int main() {
+    int score = 200;
+    int *score_ptr = &score;
+
+    // Changing the value using a reference
+    int &another_score = score; // another_score is a reference to score
+    another_score = 800;  //// changing the value of reference will also change the value of 
+  original variable
+
+    // Printing the values
+    std::cout << "The value of score is " << score << std::endl;
+    std::cout << "The value of score_ptr is " << score_ptr << std::endl;
+    std::cout << "The value of another_score is " << another_score << std::endl;
+
+    return 0;
+}
