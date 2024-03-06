@@ -1,0 +1,52 @@
+#include <iostream>
+#include <string>
+#include <sstream>
+using namespace std;
+
+
+
+int main(){
+
+ ///type 1 of iterating over array//
+  
+ int array[4]={2,3,4,5};
+
+  for(int i:array){
+    cout<<i<<endl;
+  }
+
+
+  /////type 2 of iterating over string//
+
+  ///every string has a 0 at end
+  
+  char my_name[]="suphal";
+  for(int i=0;my_name[i] !=0;i++){
+    cout<<my_name[i]<<endl;
+  }
+
+
+  ///type 3 with short note
+
+  char my_name2[]="rahul";
+  for(int j=0;my_name2[j];j++){
+    cout<<my_name2[j]<<endl;
+  }
+
+  ///type 4::iterating over string thoroug pointer
+
+  for(char *cp=my_name2;*cp!=0;cp++){
+    cout <<"character is :"<<*cp<<endl;
+    
+  }
+  ///type 5:
+  for(char i:my_name2){
+    if(i==0) break;
+    cout<<"char is: "<<i<< endl;
+  }
+  
+ 
+  return 0;
+  
+  
+}
