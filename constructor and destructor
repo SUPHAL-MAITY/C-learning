@@ -1,0 +1,59 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+
+class Phone {
+ string _name="lolly";
+ string _os="";
+ // int _price=0;
+   
+public:
+  Phone();// default constructor
+Phone(const string & name,const string & os);//prameter constructor
+Phone(const Phone &);//copy condtructor
+string getName(){ return _name;}
+~Phone();//destructor 
+      
+};
+
+///this constructor overwriting  the default value
+Phone::Phone():_name("Andy"), _os(){
+  cout<< "default constructor"<< endl;
+}
+
+Phone::Phone(const string & name,const string & os):_name(name), _os(os){
+  cout<<"this is  parameter constructor)"<<endl;
+}
+
+
+Phone::Phone(const Phone & values){
+  cout<<"OVERWRITE COPY CONSTRUCTOR"<<endl;
+  _name="skinned"+ values._name;
+  _os=values._os;
+  
+}
+
+
+Phone::~Phone(){
+  cout<<"Destruction called "<<endl;
+}
+
+
+
+
+int main() {
+  Phone samsung1;
+  cout<<samsung1.getName()<<endl;
+
+  Phone OnePlus("op8","Android");
+  cout<<OnePlus.getName()<<endl;
+
+
+
+  Phone OnePlus8S = OnePlus;
+  cout<<OnePlus8S.getName()<<endl;
+  
+  
+    return 0;
+}
