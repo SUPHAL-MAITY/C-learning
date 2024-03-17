@@ -1,0 +1,26 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+
+
+struct Rectangle{
+ int length;
+ int breadth;
+};
+
+
+
+int main(){
+
+  struct Rectangle r={20,15};
+  struct Rectangle *p=&r;
+
+  r.length=30;
+  p->length=40;
+
+  cout<<r.length<<endl;
+
+
+  return 0;
+}
