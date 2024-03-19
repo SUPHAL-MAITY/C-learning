@@ -1,0 +1,98 @@
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+
+
+class Array{
+int *A;
+int length;
+
+public:
+Array(int arr[],int len){
+  length=len;
+  A=new int[length];
+  for(int i=0;i<length;i++){
+    A[i]=arr[i];
+  }
+}
+
+void display(){
+  cout<<"Elements of the array are:"<<endl;
+  for(int i=0;i<length;i++){
+    cout<<A[i]<<endl;
+  }
+}
+
+int Get(int index){
+  if(index>=0 && index<length){
+    cout<<"The element at index is:"<<A[index]<<endl;
+    
+  }
+  
+  return -1;
+}
+
+void Set(int index,int value){
+  if(index>=0 && index<length){
+    A[index]=value;
+  }
+  
+}
+int Max(){
+  int max=A[0];
+  for(int i=0;i<length;i++){
+    if(A[i]>max){
+      max=A[i];
+    }
+  }
+  return max;
+}
+
+
+int Min(){
+  int min=A[0];
+  for(int i=0;i<length;i++){
+    if(A[i]<min){
+      min=A[i];
+    }
+  }
+  return min;
+}
+
+
+int Sum(){
+  int sum=0;
+  for(int i=0;i<length;i++){
+    sum=sum+A[i];
+  }
+  return sum;
+}
+
+~Array(){
+  delete []A;
+  cout<<"Destructor is called"<<endl;
+}
+
+};
+
+
+int main(){
+
+  int arr[5]={1,2,4,5,6};
+  Array a(arr,5);
+  a.display();
+  a.Get(2);
+  a.Set(2,3);
+  a.Get(2);
+  cout<<"the maximum value is"<<a.Max()<<endl;
+  cout<<"the minimum value is"<<a.Min()<<endl;
+  cout<<"the sum is"<<a.Sum()<<endl;
+
+
+  
+
+  return 0;
+}
+     
