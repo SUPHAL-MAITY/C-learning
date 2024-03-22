@@ -1,0 +1,102 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Array{
+private:
+    int *arr;
+    int size;
+    int length;
+public:
+    Array(int size,int length){
+      this->size=size;
+      this->length=length;
+      arr=new int[size];
+      
+    }
+
+void Create(){
+  cout<<"Enter The numbers in sorted manner:"<<flush;
+  
+  for(int i=0;i<length;i++){
+    cin>>arr[i];
+    
+  }
+}
+
+int Get(int index){
+  if(index>=0 && index<length){
+    return arr[index];
+  }
+  return -1;
+  
+}
+
+
+int Set(int index,int x){
+  if(index>=0 && index<length){
+    return arr[index]=x;
+  }
+  return -1;
+
+}
+
+void Display(){
+    for (int i = 0; i < length; i++){
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+}
+
+
+Array Merge(Array &B){
+  int i=0,j=0,k=0;
+  Array C(size + B.size, length + B.length);
+
+  while(i<length && j<B.length){
+    if(arr[i]<B.Get(j)){
+      C.Set(k++,arr[i++]);
+    }else{
+      C.Set(k++,B.Get(j++));
+    }
+  }
+
+  for(;i<length;i++){
+    C.Set(k++,arr[i]);
+    
+  }
+
+  for(;j<B.length;j++){
+    C.Set(k++, B.Get(j));
+
+  }
+
+ 
+
+  return C;
+  
+};
+
+
+};
+
+
+
+int main(){
+
+  Array x(10,5);
+  Array y(10,4);
+  x.Create();
+  y.Create();
+
+  Array z=x.Merge(y);
+  z.Display();
+
+
+ 
+  
+ 
+  return 0;
+}
+
+
